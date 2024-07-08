@@ -21,9 +21,9 @@ fetch(proxyUrl, {
         const parser = new DOMParser();
         const doc = parser.parseFromString(data, "text/html");
 
-        // doc.querySelectorAll("a[href]").forEach((a) => {
-        //     a.href = proxyfyUrl(a.href);
-        // });
+        doc.querySelectorAll("a[href]").forEach((a) => {
+            a.href = proxyfyUrl(a.href);
+        });
         const style = doc.createElement("style");
         style.textContent = "#header { display: none !important; } #page-title{ display: none !important; } #footer { display: none !important; } #scrollTop {display: none !important;} .right-icon-terbang {display: none !important;}";
 
